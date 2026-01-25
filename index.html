@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Centro de Estética en Zafra | Marina Spa</title>
+  <meta name="description"
+    content="Centro de estética en Zafra especializado en tratamientos faciales, corporales, Indiba y bienestar. Reserva tu cita en Marina Spa." />
+  <meta name="keywords"
+    content="centro de estética zafra, centro de belleza zafra, indiba zafra, masajes zafra, depilación zafra, tratamientos faciales zafra, marina spa" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://marinaspa.es" />
+
+  <!-- LCP Optimization: Preload Hero Image -->
+  <link rel="preload" as="image" href="https://marinaspa.es/src/assets/img/spa-marina-zafra-bienestar-zen.png"
+    fetchpriority="high" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:url" content="https://marinaspa.es/" />
+  <meta property="og:title" content="MARINA SPA | Centro de Estética y Belleza en Zafra" />
+  <meta property="og:description"
+    content="Descubre el bienestar en Marina Spa. Tu centro de estética en Zafra especializado en tratamientos faciales avanzados, Indiba y rituales corporales." />
+  <meta property="og:image" content="https://marinaspa.es/src/assets/img/logo-marinaspa.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://marinaspa.es/" />
+  <meta property="twitter:title" content="MARINA SPA | Centro de Estética Zafra" />
+  <meta property="twitter:description"
+    content="Tu centro de belleza en Zafra. Resultados visibles y relajación profunda." />
+  <meta property="twitter:image" content="https://marinaspa.es/src/assets/img/logo-marinaspa.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'serif'],
+          },
+          colors: {
+            'marina-gold': '#D4AF37', // Metallic Gold
+            'marina-gold-light': '#F3E5AB', // Champagne
+            'marina-cream': '#FFFAF0', // Floral White
+            'marina-stone': '#F5F5F4',
+            'marina-dark': '#1C1917', // Stone 900
+            'marina-charcoal': '#2D2A26',
+          },
+          transitionTimingFunction: {
+            'luxury': 'cubic-bezier(0.25, 1, 0.5, 1)', // Soft deceleration
+            'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+            'fade-in': 'fadeIn 1.5s ease-out forwards',
+            'ken-burns': 'kenBurns 20s ease-out infinite alternate',
+            'scroll-bounce': 'scrollBounce 2s infinite',
+            'spin-slow': 'spin 15s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'wave': 'wave 8s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(60px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            kenBurns: {
+              '0%': { transform: 'scale(1)' },
+              '100%': { transform: 'scale(1.15)' },
+            },
+            scrollBounce: {
+              '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+              '40%': { transform: 'translateY(10px)' },
+              '60%': { transform: 'translateY(5px)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            wave: {
+              '0%, 100%': { transform: 'translateX(0)' },
+              '50%': { transform: 'translateX(20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    ::selection {
+      background: #D4AF37;
+      color: white;
+    }
+
+    /* Accessibility Improvements */
+    /* Visible focus indicator for keyboard navigation */
+    *:focus-visible {
+      outline: 2px solid #D4AF37;
+      outline-offset: 2px;
+    }
+
+    /* Reduce Motion Preference */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      ::before,
+      ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .parallax-bg {
+        background-attachment: scroll;
+        /* Disable parallax on reduced motion */
+      }
+    }
+
+    /* Screen Reader Only Utility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+  <!--<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@18.2.0,react-dom@18.2.0",
+    "framer-motion": "https://esm.sh/framer-motion@11.0.8?deps=react@18.2.0,react-dom@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>-->
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-stone-50 text-stone-700 antialiased overflow-x-hidden">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

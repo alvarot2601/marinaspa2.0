@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Acceso Restringido"
+AuthUserFile /home/www/public/Marinaspa/.htpasswd
+Require valid-user
