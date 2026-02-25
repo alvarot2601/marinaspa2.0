@@ -336,6 +336,11 @@ export const DEPILATION_SERVICES: ServiceCategory[] = [
     description: "Soluciones eficaces para la eliminación del vello, desde cera tradicional hasta tecnología avanzada.",
     items: [
       {
+        name: "Depilación y diseño de cejas",
+        price: "6€",
+        description: ""
+      },
+      {
         name: "Depilación Cera",
         price: "Desde 3€",
         description: "Zonas XS (3€), S (7€), M (15€), L (17€) y XL (30€)."
@@ -392,7 +397,7 @@ export const AESTHETIC_SERVICES: ServiceCategory[] = [
       },
       {
         name: "Pedicura Spa",
-        price: "30",
+        price: "30€",
         description: "Tratamiento completo de belleza en tus pies."
       }
     ]
