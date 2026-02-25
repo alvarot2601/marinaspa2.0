@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ServiceCategory, Testimonial } from '../types';
 import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
-import headerImage3 from '../src/assets/img/masaje-facial-relax-spa-marina-zafra.png';
+import headerImage3 from '../src/assets/img/masaje-facial-relax-spa-marina-zafra.webp';
 
 // --- Schema Markup Component (JSON-LD) for Local SEO ---
 export const SchemaMarkup: React.FC = () => {
@@ -246,29 +246,32 @@ export const RevealOnScroll: React.FC<{ children: React.ReactNode; delay?: numbe
 };
 
 // Header with Smooth Zoom Animation (Ken Burns Effect) - No Scroll Parallax
-export const PageHeader: React.FC<{ title: string; subtitle: string; bgImage?: string; altImage?: string }> = ({ title, subtitle, bgImage, altImage }) => {
+export const PageHeader: React.FC<{ title: string; subtitle: string; bgImage?: string; bgImageFallback?: string; altImage?: string }> = ({ title, subtitle, bgImage, bgImageFallback, altImage }) => {
   const shouldReduceMotion = useReducedMotion();
   const image = bgImage;
 
   return (
     <section className="relative h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden bg-marina-dark">
-      {/* Animated Background Container */}
-      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
-        <motion.div
-          className="w-full h-full"
-          initial={{ scale: shouldReduceMotion ? 1 : 1.15 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 10, ease: "linear" }}
-        >
-          <img
-            src={image}
-            alt={altImage}
-            className="w-full h-full object-cover opacity-40"
-            // Priority load for LCP as headers are usually at the top
-            fetchPriority="high"
-          />
-        </motion.div>
-      </div>
+      {/* LCP IMAGE (STATIC, OPTIMIZED) */}
+      <picture>
+        <source srcSet={bgImage} type="image/webp" />
+        <img
+          src={bgImageFallback}
+          alt={altImage}
+          width="1456"
+          height="816"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </picture>
+        {/* OVERLAYS (HERE YOU CAN ANIMATE IF YOU WANT) */}
+      <motion.div
+        className="absolute inset-0 bg-marina-dark/60 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      />
 
       {/* Abstract Overlays */}
       <div className="absolute inset-0 bg-gradient-to-t from-marina-dark via-marina-dark/40 to-transparent z-10"></div>

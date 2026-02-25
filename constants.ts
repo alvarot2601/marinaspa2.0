@@ -53,27 +53,27 @@ export const FACIAL_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Limpieza en Profundidad de la piel con cosmética profesional",
-        price: "40€",
+        price: "44€",
         description: "Este tratamiento se centra en una limpieza exhaustiva de la piel utilizando productos de alta calidad. Se eliminan impurezas, se desobstruyen los poros y se prepara la piel para recibirlos siguientes pasos del cuidado facial. Ideal para mantener la piel fresca y saludable."
       },
       {
         name: "Higiene Facial profunda con microdermoabrasión con punta de Diamante",
-        price: "45€",
+        price: "50€",
         description: "Un tratamiento indoloro que utiliza tecnología avanzada para exfoliar la piel suavemente. La microdermoabrasión elimina las células muertas, promoviendo la regeneración celular y dejando la piel suave y radiante. Además, ayuda a reafirmar el rostro y a disminuir la visibilidad de las líneas de expresión."
       },
       {
         name: "Hidravacuum",
-        price: "50€",
+        price: "55€",
         description: "Este ritual combina varias técnicas para ofrecer una experiencia completa. La tecnología Hidravacuum realiza una limpieza profunda, seguida de un proceso detox que elimina toxinas y proporciona una exfoliación efectiva. Finalmente, se nutre la piel con productos específicos que hidratan y revitalizan, dejando un aspecto saludable y luminoso."
       },
       {
         name: "Ritual de Regeneración y Luminosidad",
-        price: "50€",
+        price: "55€",
         description: "Un tratamiento diseñado para devolverle a tu piel su brillo natural. A través de técnicas específicas, se estimula la regeneración celular y se mejora la textura de la piel. Ideal para quienes buscan un rostro radiante y rejuvenecido."
       },
       {
         name: "Ritual Equilibrio y Purificador",
-        price: "45€",
+        price: "49€",
         description: "Este tratamiento está especialmente formulado para las pieles mixtas y grasas. Ayuda a restablecer el equilibrio natural de la piel, eliminando imperfecciones y reduciendo brillos no deseados. Es perfecto para quienes desean una piel más limpia, fresca y libre de impurezas."
       }
     ]
@@ -84,17 +84,17 @@ export const FACIAL_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Ritual Biocelular",
-        price: "48€",
+        price: "52€",
         description: "Regenera la piel, estimula la producción de colágeno y elastina, mejorando la textura y luminosidad."
       },
       {
         name: "Ritual Ácido Hialurónico",
-        price: "48€",
+        price: "52€",
         description: "Hidratación profunda con efecto lifting natural, suavizando líneas de expresión y mejorando el contorno facial."
       },
       {
         name: "Ritual de Perlas",
-        price: "48€",
+        price: "52€",
         description: "Aporta luminosidad y juventud a la piel con extractos de perlas, ofreciendo propiedades antioxidantes y una apariencia radiante."
       }
     ]
@@ -110,22 +110,22 @@ export const FACIAL_SERVICES: ServiceCategory[] = [
       },
       {
         name: "Tratamiento MESOECLAT",
-        price: "60€",
+        price: "65€",
         description: "Es una solución avanzada para quienes buscan revitalizar su piel de manera rápida y efectiva. Este tratamiento esta diseñado para combatir los signos del envejecimiento, mejorar la textura y unificar el tono de la piel, dejando un acabado radiante y rejuvenecido."
       },
       {
         name: "Masaje ENERGILIFT",
-        price: "35€",
+        price: "40€",
         description: "Técnica de lifting manual que transforma la apariencia de tu rostro de manera natural. Este tratamiento exclusivo está diseñado para remodelar la estructura de la piel, reposicionar los volúmenes y redefinir el contorno facial, logrando un efecto rejuvenecedor inmediato."
       },
       {
         name: "Programa Facial Personalizado (6 sesiones)",
-        price: "299€",
+        price: "330€",
         description: ""
       },
       {
         name: "Mantenimiento Facial",
-        price: "55€",
+        price: "59€",
         description: ""
       }
     ]
@@ -139,13 +139,13 @@ export const INDIBA_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Indiba Facial Exprés",
-        price: "35€",
+        price: "39€",
         duration: "30 min",
         description: "El Indiba Facial Express es un tratamiento innovador que utiliza la tecnología de Indiba para ofrecer resultados visibles en tan solo 30 minutos. Este procedimiento se centra exclusivamente en la aplicación de Indiba, proporcionando un efecto rejuvenecedor y revitalizante para tu piel."
       },
       {
         name: "Indiba Facial Pro",
-        price: "59€",
+        price: "62€",
         duration: "60 min",
         description: "Programa facial, trabajamos todos los aspectos de tu piel en una sola sesión, combinando 2 tratamientos en 1, como ácido + Indiba, Dermapen + Indiba, o Indiba Ona + Indiba. Todo complementado con nuestra mejor cosmética y personalizada según caso. Esto asegura resultados más completos y efectivos."
       },
@@ -210,12 +210,12 @@ export const BODY_SERVICES: ServiceCategory[] = [
       },
       {
         name: "Programa Integral Personalizado",
-        price: "Desde 420€",
-        description: "10 sesiones de acción global sobre grasas profundas y superficiales, remodela la silueta y reduce la celulitis. 1 zona: 420€ | 2 zonas: 650€."
+        price: "Desde 450€",
+        description: "10 sesiones de acción global sobre grasas profundas y superficiales, remodela la silueta y reduce la celulitis. 1 zona: 420€ | 2 zonas: 700€."
       },
       {
         name: "Mantenimiento Corporal",
-        price: "55€/sesión",
+        price: "59€/sesión",
       }
     ]
   }
@@ -246,19 +246,19 @@ export const SPA_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Peeling Vivificante",
-        price: "35€",
+        price: "39€",
         duration: "35 min",
         description: "Elimina el estrés."
       },
       {
         name: "Peeling Hidratante",
-        price: "35€",
+        price: "39€",
         duration: "35 min",
         description: "Piel más suave y súper hidratada."
       },
       {
         name: "Polinesia",
-        price: "35€",
+        price: "39€",
         duration: "35 min",
         description: "Piel aterciopelada y con una luminosidad natural."
       }
@@ -270,7 +270,7 @@ export const SPA_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Masaje Antiestrés",
-        price: "25€ / 45€",
+        price: "29€ / 49€",
         duration: "30min / 50min",
         description: "Desconecta de la rutina y libera tensiones."
       },
@@ -338,7 +338,7 @@ export const DEPILATION_SERVICES: ServiceCategory[] = [
       {
         name: "Depilación Cera",
         price: "Desde 3€",
-        description: "Zonas XS (3€), S (7€), M (12€), L (17€) y XL (28€)."
+        description: "Zonas XS (3€), S (7€), M (15€), L (17€) y XL (30€)."
       },
       {
         name: "Depilación con Hilo",
@@ -353,7 +353,7 @@ export const DEPILATION_SERVICES: ServiceCategory[] = [
       {
         name: "Bonos 5 sesiones",
         price: "Desde 80€",
-        description: "Piernas completas (200€), axilas + ingles completas (200€), axilas + ingles normales (200€), espalda (175€), pecho (175€), medias piernas (170€), brazos (170€), ingles completas + perianal (150€), axilas (80€)."
+        description: "Piernas completas (200€), axilas + ingles completas (200€), axilas + ingles normales (175€), espalda (175€), pecho (175€), medias piernas (170€), brazos (170€), ingles completas + perianal (150€), axilas (80€)."
       }
     ]
   }
@@ -366,17 +366,17 @@ export const AESTHETIC_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Manicura Normal",
-        price: "14€",
+        price: "15€",
         description: ""
       },
       {
         name: "Manicura con Esmaltado Semipermanente",
-        price: "20€",
+        price: "22€",
         description: ""
       },
       {
         name: "Manicura Spa",
-        price: "29€",
+        price: "30€",
         description: "Tratamiento completo de belleza en tus manos."
       }
     ]
@@ -387,12 +387,12 @@ export const AESTHETIC_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Pedicura con Esmaltado Semipermanente",
-        price: "20€",
+        price: "22€",
         description: ""
       },
       {
         name: "Pedicura Spa",
-        price: "29€",
+        price: "30",
         description: "Tratamiento completo de belleza en tus pies."
       }
     ]
@@ -403,38 +403,17 @@ export const AESTHETIC_SERVICES: ServiceCategory[] = [
     items: [
       {
         name: "Maquillaje Social",
-        price: "35€",
+        price: "40€",
         description: "Día, tarde o noche."
       },
       {
         name: "Maquillaje de Novia",
-        price: "110€",
+        price: "150€",
         description: "Incluye fijación flash de larga duración y prueba de maquillaje. No incluye desplazamiento."
       },
       {
         name: "Lifting de Pestañas + Tinte",
-        price: "35€",
-        description: ""
-      }
-    ]
-  },
-  {
-    title: "Maquillaje",
-    description: "Realza tu belleza natural para eventos especiales.",
-    items: [
-      {
-        name: "Maquillaje Social",
-        price: "35€",
-        description: "Día, tarde o noche."
-      },
-      {
-        name: "Maquillaje de Novia",
-        price: "110€",
-        description: "Incluye fijación flash de larga duración y prueba de maquillaje. No incluye desplazamiento."
-      },
-      {
-        name: "Lifting de Pestañas + Tinte",
-        price: "35€",
+        price: "38€",
         description: ""
       }
     ]

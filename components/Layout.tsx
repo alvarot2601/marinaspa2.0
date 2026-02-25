@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X, Instagram, Facebook, MapPin, Phone, Mail, ChevronDown } from 'lucide-react';
 import { SEO_DATA } from '../constants';
-import LogoImage from '../src/assets/img/logo-2.png';
+import LogoImage from '../src/assets/img/logo.webp';
 import { CookieBanner, useCookieConsent } from './CookieConsent';
 
 interface MobileLinkProps {

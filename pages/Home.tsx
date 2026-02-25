@@ -1,32 +1,46 @@
-import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { ArrowRight, MapPin, Calendar } from 'lucide-react';
-import { SEO_DATA, TESTIMONIALS } from '../constants';
-import { CtaBanner, RevealOnScroll, TestimonialSlider, AnimatedTitle, SchemaMarkup } from '../components/PageComponents';
-import { motion, useReducedMotion } from 'framer-motion';
-import { BotanicalBg, ZenCirclesBg, OrganicWavesBg } from '../components/Backgrounds';
-import IndibaTreatmentsImage from '../src/assets/img/tratamientos-indiba.png';
-import FacialTreatmentsImage from '../src/assets/img/tratamientos-faciales.jpg';
-import DepilationTreatmentsImage from '../src/assets/img/tratamientos-depilacion.png';
-import AestheticGeneralTreatmentsImage from '../src/assets/img/tratamientos-estetica-general.png';
-import WellnessTreatmentsImage from '../src/assets/img/tratamientos-bienestar.jpg';
-import corporalTreatmentsImage from '../src/assets/img/tratamientos-corporales.png';
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { ArrowRight, MapPin, Calendar } from "lucide-react";
+import { SEO_DATA, TESTIMONIALS } from "../constants";
+import {
+  CtaBanner,
+  RevealOnScroll,
+  TestimonialSlider,
+  AnimatedTitle,
+  SchemaMarkup,
+} from "../components/PageComponents";
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  BotanicalBg,
+  ZenCirclesBg,
+  OrganicWavesBg,
+} from "../components/Backgrounds";
+import IndibaTreatmentsImage from "../src/assets/img/tratamientos-indiba.webp";
+//import IndibaTreatmentsImagePNG from "../src/assets/img/tratamientos-indiba.png";
+import FacialTreatmentsImage from "../src/assets/img/tratamientos-faciales.webp";
+//import FacialTreatmentsImageJPG from "../src/assets/img/tratamientos-faciales.jpg";
+import DepilationTreatmentsImage from "../src/assets/img/tratamientos-depilacion.webp";
+import AestheticGeneralTreatmentsImage from "../src/assets/img/tratamientos-estetica-general.webp";
+import WellnessTreatmentsImage from "../src/assets/img/tratamientos-bienestar.webp";
+import corporalTreatmentsImage from "../src/assets/img/tratamientos-corporales.webp";
 
-import FacilitiesImage from '../src/assets/img/habitacion-instalaciones.png';
-import headerImage from '../src/assets/img/spa-marina-zafra-bienestar-zen.png';
-import headerImage2 from '../src/assets/img/textura-suave-spa-lujo.png';
+import FacilitiesImage from "../src/assets/img/habitacion-instalaciones.webp";
+import FacilitiesImagePNG from "../src/assets/img/habitacion-instalaciones.png";
+import headerImage from "../src/assets/img/spa-marina-zafra-bienestar-zen.webp";
+import headerImagePNG from "../src/assets/img/spa-marina-zafra-bienestar-zen.png";
+
+import headerImage2 from "../src/assets/img/textura-suave-spa-lujo.webp";
+//import headerImage2PNG from "../src/assets/img/textura-suave-spa-lujo.png";
 
 // --- Static Hero Component (SEO & Conversion Optimized) ---
 const StaticHero: React.FC = () => {
-  const shouldReduceMotion = useReducedMotion();
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 }
-    }
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
   };
 
   const itemVariants = {
@@ -34,22 +48,26 @@ const StaticHero: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-    }
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   return (
     <section className="relative h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden bg-marina-dark">
       {/* 1. Background Image - LCP Optimized (Matches index.html preload) */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={headerImage}
-          alt="Ambiente de bienestar y relajación con piedras zen en un spa de estética en Zafra"
-          className="w-full h-full object-cover opacity-90"
-          fetchPriority="high" // Critical for SEO/LCP
-          width="2070"
-          height="1380"
-        />
+        <picture>
+          <source srcSet={headerImage} type="image/webp" />
+          <img
+            src={headerImagePNG}
+            alt="Ambiente de bienestar y relajación con piedras zen en un spa de estética en Zafra"
+            width="1456"
+            height="816"
+            fetchPriority="high" // Critical for SEO/LCP
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
+        </picture>
         {/* Premium Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-marina-dark/40 to-marina-dark/90"></div>
         <div className="absolute inset-0 bg-black/20"></div>
@@ -91,8 +109,11 @@ const StaticHero: React.FC = () => {
             variants={itemVariants}
             className="text-stone-400 text-sm md:text-base font-light mb-10 max-w-xl mx-auto"
           >
-            Más de <strong>300 clientas satisfechas</strong> confían en nuestro <strong>centro de estética en Zafra</strong>,
-            ubicado en la calle Reyes Huertas. Fusionamos <strong>alta cosmética, tecnología avanzada e Indiba</strong> para ayudarte a realzar tu mejor versión.
+            Más de <strong>300 clientas satisfechas</strong> confían en nuestro{" "}
+            <strong>centro de estética en Zafra</strong>, ubicado en la calle
+            Reyes Huertas. Fusionamos{" "}
+            <strong>alta cosmética, tecnología avanzada e Indiba</strong> para
+            ayudarte a realzar tu mejor versión.
           </motion.p>
 
           {/* CTAs: Conversion & Location */}
@@ -109,14 +130,9 @@ const StaticHero: React.FC = () => {
               <Calendar size={16} />
               Pedir cita ahora
             </NavLink>
-
-
           </motion.div>
         </motion.div>
-        <motion.div
-          variants={itemVariants}
-          className="mt-6"
-        >
+        <motion.div variants={itemVariants} className="mt-6">
           <NavLink
             to={SEO_DATA.faciales.path}
             className="text-xs text-stone-400 underline hover:text-marina-gold transition-colors"
@@ -125,8 +141,6 @@ const StaticHero: React.FC = () => {
           </NavLink>
         </motion.div>
       </div>
-
-
     </section>
   );
 };
@@ -135,36 +149,39 @@ const StaticHero: React.FC = () => {
 const LuxuriousIntro: React.FC = () => {
   return (
     <section className="py-32 md:py-48 bg-white relative overflow-hidden">
-
       {/* Animated Background - Botanical for Nature/Intro */}
       <BotanicalBg />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-16 md:gap-32">
-
           <div className="md:w-1/2 relative order-2 md:order-1 h-[550px] flex items-center justify-center">
             <RevealOnScroll>
               <div className="relative z-10">
                 {/* Main Image */}
                 <div>
-                  <img
-                    src={FacilitiesImage}
-                    alt="Instalaciones interiores de nuestro centro de estética Marina Spa"
-                    className="w-full max-w-md shadow-2xl rounded-sm relative z-10"
-                    loading="lazy"
-                    width="448"
-                    height="672"
-                  />
+                  <picture>
+                    <source srcSet={FacilitiesImage} type="image/webp" />
+                    <img
+                      src={FacilitiesImagePNG}
+                      alt="Instalaciones interiores de nuestro centro de estética Marina Spa"
+                      width="448"
+                      height="672"
+                      loading="lazy"
+                      fetchPriority="high"
+                      decoding="async"
+                      className="w-full max-w-md shadow-2xl rounded-sm relative z-10"
+                    />
+                  </picture>
                 </div>
               </div>
             </RevealOnScroll>
-
-
           </div>
 
           <div className="md:w-1/2 order-1 md:order-2">
             <RevealOnScroll>
-              <span className="text-marina-gold text-xs tracking-[0.3em] uppercase block mb-6 font-bold">Filosofía Marina Spa</span>
+              <span className="text-marina-gold text-xs tracking-[0.3em] uppercase block mb-6 font-bold">
+                Filosofía Marina Spa
+              </span>
               <AnimatedTitle
                 text="Filosofía de tu Centro de Belleza en Zafra"
                 el="h2"
@@ -172,13 +189,45 @@ const LuxuriousIntro: React.FC = () => {
               />
               <div className="w-20 h-px bg-marina-gold mb-8"></div>
               <p className="text-stone-600 font-light text-lg leading-loose mb-6">
-                En Marina Spa comprendemos que el bienestar no es un lujo, sino una necesidad. Cada tratamiento cuenta una historia, y nosotros estamos aquí para escucharla y mejorarla.
+                En Marina Spa comprendemos que el bienestar no es un lujo, sino
+                una necesidad. Cada tratamiento cuenta una historia, y nosotros
+                estamos aquí para escucharla y mejorarla.
               </p>
               <p className="text-stone-600 font-light text-lg leading-loose mb-10">
-                Como referente en <strong>centro de belleza en Zafra</strong>, fusionamos la <NavLink to={SEO_DATA.faciales.path} className="text-marina-dark border-b border-marina-gold/30 hover:text-marina-gold transition-colors font-bold">cosmética de alta gama</NavLink> con la tecnología más avanzada, como <NavLink to={SEO_DATA.indiba.path} className="text-marina-dark border-b border-marina-gold/30 hover:text-marina-gold transition-colors font-bold">Indiba</NavLink>, en un entorno diseñado para la <NavLink to={SEO_DATA.spa.path} className="text-marina-dark border-b border-marina-gold/30 hover:text-marina-gold transition-colors font-bold">calma absoluta</NavLink>. Somos tu <strong>centro de estética en Zafra</strong> de confianza.
+                Como referente en <strong>centro de belleza en Zafra</strong>,
+                fusionamos la{" "}
+                <NavLink
+                  to={SEO_DATA.faciales.path}
+                  className="text-marina-dark border-b border-marina-gold/30 hover:text-marina-gold transition-colors font-bold"
+                >
+                  cosmética de alta gama
+                </NavLink>{" "}
+                con la tecnología más avanzada, como{" "}
+                <NavLink
+                  to={SEO_DATA.indiba.path}
+                  className="text-marina-dark border-b border-marina-gold/30 hover:text-marina-gold transition-colors font-bold"
+                >
+                  Indiba
+                </NavLink>
+                , en un entorno diseñado para la{" "}
+                <NavLink
+                  to={SEO_DATA.spa.path}
+                  className="text-marina-dark border-b border-marina-gold/30 hover:text-marina-gold transition-colors font-bold"
+                >
+                  calma absoluta
+                </NavLink>
+                . Somos tu <strong>centro de estética en Zafra</strong> de
+                confianza.
               </p>
-              <NavLink to={SEO_DATA.faciales.path} className="group flex items-center gap-2 text-marina-dark uppercase tracking-widest text-xs font-bold hover:text-marina-gold transition-colors focus:outline-none focus:ring-2 focus:ring-marina-gold p-1 rounded-sm">
-                Nuestra Historia <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
+              <NavLink
+                to={SEO_DATA.faciales.path}
+                className="group flex items-center gap-2 text-marina-dark uppercase tracking-widest text-xs font-bold hover:text-marina-gold transition-colors focus:outline-none focus:ring-2 focus:ring-marina-gold p-1 rounded-sm"
+              >
+                Nuestra Historia{" "}
+                <ArrowRight
+                  size={14}
+                  className="group-hover:translate-x-2 transition-transform"
+                />
               </NavLink>
             </RevealOnScroll>
           </div>
@@ -197,7 +246,7 @@ const SERVICES_PREVIEW = [
     desc: "Rejuvenecimiento, higiene y luminosidad con alta cosmética.",
     link: SEO_DATA.faciales.path,
     img: FacialTreatmentsImage,
-    delay: 0
+    delay: 0,
   },
   {
     title: "Indiba Zafra",
@@ -205,7 +254,7 @@ const SERVICES_PREVIEW = [
     desc: "Radiofrecuencia regenerativa celular para rostro y cuerpo.",
     link: SEO_DATA.indiba.path,
     img: IndibaTreatmentsImage,
-    delay: 100
+    delay: 100,
   },
   {
     title: "Corporales",
@@ -213,7 +262,7 @@ const SERVICES_PREVIEW = [
     desc: "Maderoterapia, criolipólisis y planes de adelgazamiento.",
     link: SEO_DATA.corporales.path,
     img: corporalTreatmentsImage,
-    delay: 200
+    delay: 200,
   },
   {
     title: "Bienestar",
@@ -221,7 +270,7 @@ const SERVICES_PREVIEW = [
     desc: "Masajes relajantes, bañeras de hidromasaje y rituales sensoriales.",
     link: SEO_DATA.spa.path,
     img: WellnessTreatmentsImage,
-    delay: 300
+    delay: 300,
   },
   {
     title: "Depilación",
@@ -229,7 +278,7 @@ const SERVICES_PREVIEW = [
     desc: "Láser, cera y diseño de cejas con hilo. Resultados duraderos.",
     link: SEO_DATA.depilacion.path,
     img: DepilationTreatmentsImage,
-    delay: 400
+    delay: 400,
   },
   {
     title: "Estética General",
@@ -237,8 +286,8 @@ const SERVICES_PREVIEW = [
     desc: "Manicura, pedicura y maquillaje para realzar tu belleza natural.",
     link: SEO_DATA.estetica.path,
     img: AestheticGeneralTreatmentsImage,
-    delay: 500
-  }
+    delay: 500,
+  },
 ];
 
 // --- Main Home Component ---
@@ -246,7 +295,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     document.title = SEO_DATA.home.title;
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', SEO_DATA.home.description);
+    if (metaDesc) metaDesc.setAttribute("content", SEO_DATA.home.description);
   }, []);
 
   return (
@@ -259,28 +308,40 @@ const Home: React.FC = () => {
       <LuxuriousIntro />
 
       {/* Curated Collections (Services) - Grid Layout */}
-      <section className="py-32 bg-stone-50 relative overflow-hidden" aria-labelledby="services-heading">
-
+      <section
+        className="py-32 bg-stone-50 relative overflow-hidden"
+        aria-labelledby="services-heading"
+      >
         {/* Animated Background - Zen Circles for Structure */}
-        <div aria-hidden="true"><ZenCirclesBg /></div>
+        <div aria-hidden="true">
+          <ZenCirclesBg />
+        </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-24 max-w-3xl mx-auto">
             <RevealOnScroll>
-              <span className="text-marina-gold text-xs tracking-[0.3em] uppercase block mb-4 font-bold">Descubre</span>
+              <span className="text-marina-gold text-xs tracking-[0.3em] uppercase block mb-4 font-bold">
+                Descubre
+              </span>
               <AnimatedTitle
                 text="Tratamientos de Estética en Zafra"
                 el="h2"
                 className="font-serif text-5xl text-marina-dark mb-6"
               />
-              <p className="text-stone-600 font-light text-lg">Experiencias de belleza y bienestar diseñadas para cada necesidad.</p>
+              <p className="text-stone-600 font-light text-lg">
+                Experiencias de belleza y bienestar diseñadas para cada
+                necesidad.
+              </p>
             </RevealOnScroll>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICES_PREVIEW.map((service, idx) => (
               <RevealOnScroll key={idx} delay={service.delay}>
-                <NavLink to={service.link} className="group block relative h-[500px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-700 rounded-sm focus:outline-none focus:ring-4 focus:ring-marina-gold">
+                <NavLink
+                  to={service.link}
+                  className="group block relative h-[500px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-700 rounded-sm focus:outline-none focus:ring-4 focus:ring-marina-gold"
+                >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
                     style={{ backgroundImage: `url('${service.img}')` }}
@@ -293,7 +354,9 @@ const Home: React.FC = () => {
                     <span className="text-marina-gold text-[10px] tracking-[0.3em] uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       {service.subtitle}
                     </span>
-                    <h3 className="font-serif text-3xl italic mb-4">{service.title}</h3>
+                    <h3 className="font-serif text-3xl italic mb-4">
+                      {service.title}
+                    </h3>
                     <p className="text-sm font-light text-stone-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 leading-relaxed mb-6">
                       {service.desc}
                     </p>
@@ -307,9 +370,12 @@ const Home: React.FC = () => {
       </section>
 
       {/* Parallax Section - Quote */}
-      <section className="py-40 relative bg-fixed bg-center bg-cover parallax-bg" style={{
-        backgroundImage: `url(${headerImage2})`
-      }}>
+      <section
+        className="py-40 relative bg-fixed bg-center bg-cover parallax-bg"
+        style={{
+          backgroundImage: `url(${headerImage2})`,
+        }}
+      >
         <div className="absolute inset-0 bg-marina-dark/60 backdrop-blur-[1px]"></div>
         <div className="container mx-auto px-6 relative z-10 text-center">
           <RevealOnScroll>
@@ -324,15 +390,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials - Clean & Modern */}
-      <section className="py-32 bg-white relative overflow-hidden" aria-labelledby="testimonials-heading">
-
+      <section
+        className="py-32 bg-white relative overflow-hidden"
+        aria-labelledby="testimonials-heading"
+      >
         {/* Animated Background - Organic Waves for Flow */}
-        <div aria-hidden="true"><OrganicWavesBg /></div>
+        <div aria-hidden="true">
+          <OrganicWavesBg />
+        </div>
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <RevealOnScroll>
             <div className="text-center mb-20">
-              <span className="text-marina-gold text-xs tracking-[0.3em] uppercase block mb-4 font-bold">Voces Reales</span>
+              <span className="text-marina-gold text-xs tracking-[0.3em] uppercase block mb-4 font-bold">
+                Voces Reales
+              </span>
               <AnimatedTitle
                 text="Opiniones sobre nuestro Centro"
                 el="h2"

@@ -5,11 +5,16 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { PageHeader, AnimatedTitle, RevealOnScroll, CtaBanner } from '../components/PageComponents';
 import { SEO_DATA } from '../constants';
 import { ZenCirclesBg } from '../components/Backgrounds';
-import FacilitiesImage from '../src/assets/img/instalaciones.png';
-import Facilities2Image from '../src/assets/img/instalaciones-2.png';
-import Facilities3Image from '../src/assets/img/instalaciones-3.png';
+import FacilitiesImage from '../src/assets/img/instalaciones.webp';
+import FacilitiesImagePNG from '../src/assets/img/instalaciones.png';
+import Facilities2Image from '../src/assets/img/instalaciones-2.webp';
+import Facilities2ImagePNG from '../src/assets/img/instalaciones-2.png';
+import Facilities3Image from '../src/assets/img/instalaciones-3.webp';
+import Facilities3ImagePNG from '../src/assets/img/instalaciones-3.png';
 import FacilitiesVideo from '../src/assets/video/instalaciones.mp4';
-import HeroImage from '../src/assets/img/ritual-bienestar-marina-spa-zafra.png';
+import HeroImage from '../src/assets/img/ritual-bienestar-marina-spa-zafra.webp';
+import HeroImagePNG from '../src/assets/img/ritual-bienestar-marina-spa-zafra.png';
+
 
 // --- Schema Markup Component (JSON-LD) for Local SEO ---
 export const SchemaMarkup: React.FC = () => {
@@ -76,24 +81,28 @@ const GALLERY_ITEMS = [
         id: 'video-main',
         src: FacilitiesVideo,
         poster: Facilities2Image,
+        posterFallback: Facilities2ImagePNG,
         alt: "Video recorrido del centro Marina Spa"
     },
     {
         type: 'image',
         id: 'img-1',
         src: FacilitiesImage,
+        fallback: FacilitiesImagePNG,
         alt: "Cabina interior relajante de nuestro centro"
     },
     {
         type: 'image',
         id: 'img-2',
         src: Facilities2Image,
+        fallback: Facilities2ImagePNG,
         alt: "Detalle de tratamientos de nuestro centro"
     },
     {
         type: 'image',
         id: 'img-3',
         src: Facilities3Image,
+        fallback: Facilities3ImagePNG,
         alt: "Zona de relax y espera en nuestro centro"
     }
 ];
@@ -160,19 +169,27 @@ const FacilityMediaCarousel: React.FC = () => {
                             muted
                             loop
                             controls
-                            poster={currentItem.poster}
+                            preload="none"
+                            poster={currentItem.posterFallback}
                         >
                             <source src={currentItem.src} type="video/mp4" />
                             Tu navegador no soporta videos.
                         </video>
                     ) : (
                         <>
-                            <img
-                                src={currentItem.src}
-                                alt={currentItem.alt}
-                                className="w-full h-full object-cover"
-                                loading="lazy"
-                            />
+                            <picture>
+                                <source srcSet={currentItem.src} type="image/webp" />
+                                <img
+                                    src={currentItem.fallback}
+                                    alt={currentItem.alt}
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="720"
+                                    height="1280"
+                                    sizes="(max-width: 768px) 100vw, 360px"
+                                    className="w-full h-full object-cover"
+                                />
+                            </picture>
                             <div className="absolute inset-0 bg-gradient-to-t from-marina-dark/40 via-transparent to-transparent pointer-events-none"></div>
                         </>
                     )}
@@ -234,6 +251,7 @@ const About: React.FC = () => {
                 title="Donde la belleza se convierte en bienestar"
                 subtitle="Tu centro de estética en Zafra"
                 bgImage={HeroImage}
+                bgImageFallback={HeroImagePNG}
                 altImage="Detalle de manos sosteniendo aceite esencial en un ritual de bienestar en Marina Spa"
             />
 

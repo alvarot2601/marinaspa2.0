@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { PageHeader } from '../components/PageComponents';
 
 // Shared wrapper for consistent legal page layout
 const LegalPageWrapper: React.FC<{ children: React.ReactNode }> = ({ title, children }) => {

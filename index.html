@@ -4,6 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Preload fuentes críticas (SOLO estas dos) -->
+  <link rel="preload" href="/assets/fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" href="/assets/fonts/CormorantGaramond-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <title>Centro de Estética en Zafra | Marina Spa</title>
   <meta name="description"
     content="Centro de estética en Zafra especializado en tratamientos faciales, corporales, Indiba y bienestar. Reserva tu cita en Marina Spa." />
@@ -13,8 +17,7 @@
   <link rel="canonical" href="https://marinaspa.es" />
 
   <!-- LCP Optimization: Preload Hero Image -->
-  <link rel="preload" as="image" href="https://marinaspa.es/src/assets/img/spa-marina-zafra-bienestar-zen.png"
-    fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/img/spa-marina-zafra-bienestar-zen.webp" fetchpriority="high">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="business.business" />
@@ -32,79 +35,11 @@
     content="Tu centro de belleza en Zafra. Resultados visibles y relajación profunda." />
   <meta property="twitter:image" content="https://marinaspa.es/src/assets/img/logo-marinaspa.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap"
-    rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Lato', 'sans-serif'],
-            serif: ['Cormorant Garamond', 'serif'],
-          },
-          colors: {
-            'marina-gold': '#D4AF37', // Metallic Gold
-            'marina-gold-light': '#F3E5AB', // Champagne
-            'marina-cream': '#FFFAF0', // Floral White
-            'marina-stone': '#F5F5F4',
-            'marina-dark': '#1C1917', // Stone 900
-            'marina-charcoal': '#2D2A26',
-          },
-          transitionTimingFunction: {
-            'luxury': 'cubic-bezier(0.25, 1, 0.5, 1)', // Soft deceleration
-            'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
-          },
-          animation: {
-            'fade-in-up': 'fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards',
-            'fade-in': 'fadeIn 1.5s ease-out forwards',
-            'ken-burns': 'kenBurns 20s ease-out infinite alternate',
-            'scroll-bounce': 'scrollBounce 2s infinite',
-            'spin-slow': 'spin 15s linear infinite',
-            'float': 'float 6s ease-in-out infinite',
-            'wave': 'wave 8s ease-in-out infinite',
-            'pulse-slow': 'pulse 4s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(60px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-            fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' },
-            },
-            kenBurns: {
-              '0%': { transform: 'scale(1)' },
-              '100%': { transform: 'scale(1.15)' },
-            },
-            scrollBounce: {
-              '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
-              '40%': { transform: 'translateY(10px)' },
-              '60%': { transform: 'translateY(5px)' },
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-20px)' },
-            },
-            wave: {
-              '0%, 100%': { transform: 'translateX(0)' },
-              '50%': { transform: 'translateX(20px)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -163,6 +98,18 @@
       white-space: nowrap;
       border-width: 0;
     }
+
+    body {
+      margin: 0;
+      font-family: Lato, system-ui, sans-serif;
+      background-color: #fafaf9;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background-color: #1C1917;
+      color: white;
+    }
   </style>
   <!--<script type="importmap">
 {
@@ -178,7 +125,6 @@
   }
 }
 </script>-->
-  <link rel="stylesheet" href="/index.css">
 </head>
 
 <body class="bg-stone-50 text-stone-700 antialiased overflow-x-hidden">

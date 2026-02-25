@@ -16,13 +16,20 @@ import {
   DEPILATION_SERVICES,
   AESTHETIC_SERVICES
 } from '../constants';
-import IndibaTreatmentsImage from '../src/assets/img/tratamientos-indiba.png';
-import FacialTreatmentsImage from '../src/assets/img/tratamientos-faciales.jpg';
-import DepilationTreatmentsImage from '../src/assets/img/tratamientos-depilacion.png';
-import AestheticGeneralTreatmentsImage from '../src/assets/img/tratamientos-estetica-general.png';
-import WellnessTreatmentsImage from '../src/assets/img/tratamientos-bienestar.jpg';
-import FacilitiesImage from '../src/assets/img/habitacion-instalaciones.png';
-import corporalTreatmentsImage from '../src/assets/img/tratamientos-corporales.png';
+
+import IndibaTreatmentsImage from '../src/assets/img/tratamientos-indiba.webp';
+import IndibaTreatmentsImagePNG from '../src/assets/img/tratamientos-indiba.png';
+import FacialTreatmentsImage from '../src/assets/img/tratamientos-faciales.webp';
+import FacialTreatmentsImageJPG from '../src/assets/img/tratamientos-faciales.jpg';
+import DepilationTreatmentsImage from '../src/assets/img/tratamientos-depilacion.webp';
+import DepilationTreatmentsImagePNG from '../src/assets/img/tratamientos-depilacion.png';
+import AestheticGeneralTreatmentsImage from '../src/assets/img/tratamientos-estetica-general.webp';
+import AestheticGeneralTreatmentsImagePNG from '../src/assets/img/tratamientos-estetica-general.png';
+import WellnessTreatmentsImage from '../src/assets/img/tratamientos-bienestar.webp';
+import WellnessTreatmentsImageJPG from '../src/assets/img/tratamientos-bienestar.jpg';
+import corporalTreatmentsImage from '../src/assets/img/tratamientos-corporales.webp';
+import corporalTreatmentsImagePNG from '../src/assets/img/tratamientos-corporales.png';
+import CubesIMG from '../src/assets/img/cubes.webp';
 
 // --- Schema Markup Component (JSON-LD) for Local SEO ---
 export const FacialsSchemaMarkup: React.FC = () => {
@@ -208,6 +215,7 @@ export const FacialPage: React.FC = () => {
         title="Rituales y Programas Faciales"
         subtitle="Higiene, oxigenación y la mejor tecnología anti-edad en nuestro centro de estética en Zafra"
         bgImage={FacialTreatmentsImage}
+        bgImageFallback={FacialTreatmentsImageJPG}
         altImage="Tratamiento facial relajante en Marina Spa, centro de estética en Zafra"
       />
       {FACIAL_SERVICES.map((category, idx) => (
@@ -232,6 +240,7 @@ export const IndibaPage: React.FC = () => {
         title="Tratamientos Indiba en Zafra"
         subtitle="Regeneración celular profunda, belleza sin dolor y resultados visibles en Marina Spa"
         bgImage={IndibaTreatmentsImage}
+        bgImageFallback={IndibaTreatmentsImagePNG}
         altImage="Tratamientos Indiba en Marina Spa, centro de estética en Zafra"
       />
       {/* Custom intro for Indiba */}
@@ -291,6 +300,7 @@ export const BodyPage: React.FC = () => {
         title="Tratamientos Corporales Zafra"
         subtitle="Remodela tu silueta, elimina celulitis y mejora tu circulación en nuestro centro de belleza"
         bgImage={corporalTreatmentsImage}
+        bgImageFallback={corporalTreatmentsImagePNG}
         altImage="Tratamientos corporales en Marina Spa, centro de estética en Zafra"
       />
       {BODY_SERVICES.map((category, idx) => (
@@ -315,6 +325,7 @@ export const SpaPage: React.FC = () => {
         title="Bienestar y Relajación en Zafra"
         subtitle="Desconecta para reconectar: masajes, bañeras y rituales sensoriales en Marina Spa"
         bgImage={WellnessTreatmentsImage}
+        bgImageFallback={WellnessTreatmentsImageJPG}
         altImage="Bienestar y relajación en Marina Spa, centro de estética en Zafra"
       />
       {SPA_SERVICES.map((category, idx) => (
@@ -339,6 +350,7 @@ export const DepilationPage: React.FC = () => {
         title="Depilación y Fotodepilación Zafra"
         subtitle="Soluciones eficaces para la eliminación del vello: Láser, Cera y Hilo"
         bgImage={DepilationTreatmentsImage}
+        bgImageFallback={DepilationTreatmentsImagePNG}
         altImage="Depilación y fotodepilación en Marina Spa, centro de estética en Zafra"
       />
       {DEPILATION_SERVICES.map((category, idx) => (
@@ -363,6 +375,7 @@ export const GeneralPage: React.FC = () => {
         title="Estética General en Zafra"
         subtitle="Completa tu cuidado personal con servicios esenciales que realcen tu belleza y bienestar."
         bgImage={AestheticGeneralTreatmentsImage}
+        bgImageFallback={AestheticGeneralTreatmentsImagePNG}
         altImage="Estética general en Marina Spa, centro de estética en Zafra"
       />
       {AESTHETIC_SERVICES.map((category, idx) => (
@@ -377,7 +390,7 @@ export const GeneralPage: React.FC = () => {
       {/* Beauty Party Special - Luxury Light Design */}
       <div className="relative py-32 text-center overflow-hidden bg-stone-50">
         {/* Subtle background texture */}
-        <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url(${CubesIMG})` }}></div>
         {/* Gradient Overlay for warmth */}
         <div className="absolute inset-0 bg-gradient-to-r from-marina-gold-light/20 to-transparent"></div>
         <ZenCirclesBg />
@@ -387,7 +400,7 @@ export const GeneralPage: React.FC = () => {
           <p className="text-marina-gold font-serif italic text-3xl mb-12">Una celebración diferente</p>
 
           <div className="bg-white/60 backdrop-blur-xl border border-white p-10 md:p-16 max-w-3xl mx-auto mb-12 shadow-xl rounded-sm transform hover:scale-[1.02] transition-transform duration-700">
-            <p className="text-4xl font-serif text-marina-dark mb-8">59€ <span className="text-sm font-sans tracking-widest uppercase text-stone-500">/ persona</span></p>
+            <p className="text-4xl font-serif text-marina-dark mb-8">62€ <span className="text-sm font-sans tracking-widest uppercase text-stone-500">/ persona</span></p>
             <div className="h-px w-24 bg-marina-gold mx-auto mb-8"></div>
             <p className="text-stone-600 font-light leading-loose text-lg mb-8">
               ¡Para disfrutar con las amigas! Mínimo 4 personas, máximo 10 personas.<br />
